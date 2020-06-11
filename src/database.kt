@@ -1,5 +1,5 @@
 
-class db {
+class database {
     var idClienteMax = 0
     var idProductoMax = 0
     var idCompraMax = 0
