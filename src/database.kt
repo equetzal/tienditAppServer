@@ -9,10 +9,15 @@ class database {
     var clientes = mutableMapOf<Int, cliente>()
 
     //@author github.com/equetzal -> Enya
-    fun addClient(name:String){
+    fun addClient(name:String) : Int{
         val newClient = cliente(idClienteMax, name)
         clientes.put(idClienteMax, newClient)
-        idClienteMax++
+        return idClienteMax++
+    }
+
+    //@author github.com/equetzal -> Enya
+    fun isClient(idClient: Int) : Boolean{
+        return clientes.containsKey(idClient)
     }
 
     //@author github.com/equetzal -> Enya

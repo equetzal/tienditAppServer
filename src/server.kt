@@ -16,15 +16,38 @@ class server {
     fun start(){
         try{
             val serverSocket = ServerSocket(12345)
-            println("Esperando Cliente...")
+            println("Esperando Clientes...")
             println("Escuchando peticiones desde ${serverSocket.localSocketAddress}")
+
             while(true){
                 val socket = serverSocket.accept()
                 println("Se ha establecido una conexión desde ${socket.inetAddress}:${socket.port}")
 
                 val dataInputStream = DataInputStream(socket.getInputStream())
+                val dataOutputStream = DataOutputStream(socket.getOutputStream())
                 val bytes = ByteArray(1024)
 
+                val request = Gson().fromJson(dataInputStream.readUTF(), jsonRequets::class.java)
+
+                when(request.operationId){
+                    1 -> { //Agregar Cliente
+                        dataOutputStream.writeInt(db.addClient(request.clientName))
+                    }
+
+                    2 -> { //Loggear Client
+                        dataOutputStream.writeBoolean(db.isClient(request.clientId))
+                    }
+
+                    3 -> { //Mandar lista de Productos
+
+                    }
+                }
+
+                dataOutputStream.close()
+                dataInputStream.close()
+                socket.close()
+
+                /*
                 val file = "C:/equetzal/" + dataInputStream.readUTF()
                 val size = dataInputStream.readLong()
                 val dataOutputStream = DataOutputStream(FileOutputStream(file))
@@ -48,7 +71,7 @@ class server {
                 dataInputStream.close()
                 socket.close()
 
-                deserializarGustoQuetzalliano(file)
+                deserializarGustoQuetzalliano(file)*/
             }
         }catch (e:Exception){
             e.printStackTrace()
