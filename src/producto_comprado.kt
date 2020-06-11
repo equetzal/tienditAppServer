@@ -4,6 +4,7 @@ class producto_comprado(idProducto:Int, cantidadProducto:Int, precioUnitario:Dou
     var precioUnitario = precioUnitario
     var precioFinalProductos = 0.0
 
+    //@author github.com/equetzal -> Enya
     init {
         precioFinalProductos = precioUnitario*cantidadProducto
     }

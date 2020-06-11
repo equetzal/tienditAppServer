@@ -71,6 +71,7 @@ class server {
         println("Mensaje recibido: ${gustoQuetzalliano?.mensaje}")
     }
 
+    //@author github.com/equetzal -> Enya
     fun loadDatabase():database{
         val path = "./db.json"
         val jsonDB = File(path).readText(Charsets.UTF_8)
@@ -78,6 +79,7 @@ class server {
         return Gson().fromJson(jsonDB, database::class.java)
     }
 
+    //@author github.com/equetzal -> Enya
     fun dumpDatabase(){
         val path = "./db.json"
         val output = DataOutputStream(FileOutputStream(path))

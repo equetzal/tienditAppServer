@@ -1,9 +1,9 @@
 
 class producto(id:Int, nombre:String, sku:String, imgPath:String, precio:Double, cantidadDisponible:Int){
     val idProducto = id
-    val nombre = nombre
+    var nombre = nombre
     val sku = sku
     val imgPath = imgPath
-    val precio = precio
+    var precio = precio
     var cantidadDisponible = cantidadDisponible
 }

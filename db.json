@@ -1,6 +1,6 @@
 {
   "idClienteMax": 2,
-  "idProductoMax": 2,
+  "idProductoMax": 4,
   "idCompraMax": 1,
   "compras": {
     "0": {
@@ -33,13 +33,21 @@
       "precio": 250.0,
       "cantidadDisponible": 8
     },
-    "1": {
-      "idProducto": 1,
+    "2": {
+      "idProducto": 2,
       "nombre": "Cubrebocas",
       "sku": "QUETZ-3285TP",
       "imgPath": "./files/products/cubrebocas.png",
       "precio": 2300.0,
-      "cantidadDisponible": 131
+      "cantidadDisponible": 136
+    },
+    "3": {
+      "idProducto": 3,
+      "nombre": "Tamal de Mole",
+      "sku": "QUETZ-3234TP",
+      "imgPath": "./files/products/cubrebocas.png",
+      "precio": 15.5,
+      "cantidadDisponible": 67
     }
   },
   "clientes": {
@@ -49,7 +57,11 @@
       "compras": [
         0
       ],
-      "carrito": {}
+      "carrito": {
+        "3": 10,
+        "2": 1,
+        "0": 1
+      }
     },
     "1": {
       "idCliente": 1,

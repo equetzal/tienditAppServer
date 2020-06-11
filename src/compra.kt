@@ -6,6 +6,7 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
     var urlPdf = ""
     var total = 0.0
 
+    //@author github.com/equetzal -> Enya
     init{
         productosComprados.forEach {
             total += it.precioFinalProductos
