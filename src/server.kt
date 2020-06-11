@@ -1,13 +1,11 @@
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import java.io.DataInputStream
-import java.io.DataOutputStream
-import java.io.File
-import java.io.FileOutputStream
+import java.io.*
 import java.net.ServerSocket
 
 class server {
     var db = database()
+    var closeConnection = false
 
     init{
         db = loadDatabase()
@@ -20,6 +18,9 @@ class server {
             println("Escuchando peticiones desde ${serverSocket.localSocketAddress}")
 
             while(true){
+                if(closeConnection)
+                    break
+
                 val socket = serverSocket.accept()
                 println("Se ha establecido una conexión desde ${socket.inetAddress}:${socket.port}")
 
@@ -27,56 +28,162 @@ class server {
                 val dataOutputStream = DataOutputStream(socket.getOutputStream())
                 val bytes = ByteArray(1024)
 
-                val request = Gson().fromJson(dataInputStream.readUTF(), jsonRequets::class.java)
+                val request = Gson().fromJson(dataInputStream.readUTF(), jsonRequest::class.java)
+                val response = jsonResponse()
 
-                when(request.operationId){
-                    1 -> { //Agregar Cliente
-                        dataOutputStream.writeInt(db.addClient(request.clientName))
+                // del 12 al 49 por si mandan mas Json
+                if(request.operationId in (0..49)){
+                    when(request.operationId){
+                        1 -> { //Agregar Cliente
+                            response.clientId = db.addClient(request.clientName)
+                        }
+
+                        2 -> { //Loggear Client
+                            response.isLoginOk = db.isClient(request.clientId)
+                        }
+
+                        3 -> { //Mandar lista de Productos
+                            response.productList = db.getProductsList()
+                        }
+
+                        4 -> { //Añadir Producto
+                            val mimeType = dataInputStream.readUTF()
+                            val file = "./files/products/${request.productId}.$mimeType"
+                            val size:Long = dataInputStream.readLong()
+
+                            val outputFile = DataOutputStream(FileOutputStream(file))
+                            var received:Long = 0
+                            var segment:Int = 0
+                            println("Reading file $file \nSize = $size Bytes")
+                            while (received < size){
+                                segment = dataInputStream.read(bytes)
+                                outputFile.write(bytes, 0, segment)
+                                outputFile.flush()
+                                received += segment
+                                println("Received $received of $size Bytes")
+                            }
+                            println("File received successfully")
+                            outputFile.close()
+
+                            response.productId = db.addProduct(request.productName, request.productSku, file, request.productPrice, request.productAmount)
+                        }
+
+                        5 -> { //Quitar Producto
+                            response.productRemoveSuccessful = db.removeProduct(request.productId)
+                        }
+
+                        6 -> { //Actualiza Producto
+                            response.productUpdateSuccessful = db.updateProduct(request.productId, request.productName, request.productPrice, request.productAmount)
+                        }
+
+                        7 -> { //Realizar Compra
+                            response.purchaseId = db.newPurchase(request.clientId, request.cartList)
+                        }
+
+                        8 -> { //Añadir al Carrito
+                            response.isCartUpdateSuccessful = db.addToCart(request.clientId, request.productId, request.productAmount)
+                        }
+
+                        9 -> { //Quitar del Carrito
+                            response.isCartUpdateSuccessful = db.removeFromCart(request.clientId, request.productId, request.productAmount)
+                        }
+
+                        10 -> { //Reemplazar Carrito
+                            response.isCartUpdateSuccessful = db.saveCart(request.clientId, request.cartList)
+                        }
+
+                        11 -> { //Obtener Carrito
+                            response.cartList = db.getCart(request.clientId)
+                        }
                     }
+                    dataOutputStream.writeUTF(Gson().toJson(response))
+                }
 
-                    2 -> { //Loggear Client
-                        dataOutputStream.writeBoolean(db.isClient(request.clientId))
-                    }
+                // del 50 al 99 para envío de archivos
+                if(request.operationId in (0..49)){
+                    when(request.operationId){
+                        50 -> { //Obtener Imagen de Producto
+                            response.isProductImageAvailable = true
+                            var path:String? = null
+                            var file:File? = null
+                            var inputFile:DataInputStream? = null
+                            try{
+                                path = db.productos[request.productId]?.imgPath
+                                file = File(path)
+                                inputFile = DataInputStream(FileInputStream(file))
+                            }catch (e:java.lang.Exception){
+                                response.isProductImageAvailable = false
+                            }
+                            dataOutputStream.writeUTF(Gson().toJson(response))
 
-                    3 -> { //Mandar lista de Productos
+                            if(inputFile != null && file != null){
+                                dataOutputStream.writeUTF(file.name)
+                                dataOutputStream.flush()
+                                dataOutputStream.writeLong(file.length())
+                                dataOutputStream.flush()
 
+                                val size:Long = file.length()
+                                var sent:Long = 0
+                                var segment:Int = 0
+                                println("Sending file ${file.name} \nSize = $size Bytes")
+                                while(sent < size){
+                                    segment = inputFile.read(bytes)
+                                    dataOutputStream.write(bytes, 0, segment)
+                                    dataOutputStream.flush()
+                                    sent += segment
+                                    println("Sent $sent Bytes of $size Bytes")
+                                }
+                                inputFile.close()
+                            }
+                        }
+
+                        51 -> { //Obtener PDF del recibo
+                            response.isPurchasePDFAvailable = true
+                            var path:String? = null
+                            var file:File? = null
+                            var inputFile:DataInputStream? = null
+                            try{
+                                path = db.compras[request.purchaseId]?.urlPdf
+                                file = File(path)
+                                inputFile = DataInputStream(FileInputStream(file))
+                            }catch (e:java.lang.Exception){
+                                response.isPurchasePDFAvailable = false
+                            }
+                            dataOutputStream.writeUTF(Gson().toJson(response))
+
+                            if(inputFile != null && file != null){
+                                dataOutputStream.writeUTF(file.name)
+                                dataOutputStream.flush()
+                                dataOutputStream.writeLong(file.length())
+                                dataOutputStream.flush()
+
+                                val size:Long = file.length()
+                                var sent:Long = 0
+                                var segment:Int = 0
+                                println("Sending file ${file.name} \nSize = $size Bytes")
+                                while(sent < size){
+                                    segment = inputFile.read(bytes)
+                                    dataOutputStream.write(bytes, 0, segment)
+                                    dataOutputStream.flush()
+                                    sent += segment
+                                    println("Sent $sent Bytes of $size Bytes")
+                                }
+                                inputFile.close()
+                            }
+                        }
                     }
                 }
 
                 dataOutputStream.close()
                 dataInputStream.close()
                 socket.close()
-
-                /*
-                val file = "C:/equetzal/" + dataInputStream.readUTF()
-                val size = dataInputStream.readLong()
-                val dataOutputStream = DataOutputStream(FileOutputStream(file))
-
-                println("Writting File on $file")
-
-                var received:Long = 0
-                var n:Int
-                var percentage:Int
-                while(received < size){
-                    n = dataInputStream.read(bytes)
-                    dataOutputStream.write(bytes, 0, n)
-                    dataOutputStream.flush()
-                    received += n
-                    percentage = (received*100/size).toInt()
-                    println("Leido $percentage%")
-                }
-                println("Archivo Leido Completamente")
-
-                dataOutputStream.close()
-                dataInputStream.close()
-                socket.close()
-
-                deserializarGustoQuetzalliano(file)*/
             }
         }catch (e:Exception){
             e.printStackTrace()
             println("Chin! Ocurrió un error quetzalliano!")
         }
+        if(closeConnection)
+            return
     }
 
     private fun deserializarGustoQuetzalliano(file:String){

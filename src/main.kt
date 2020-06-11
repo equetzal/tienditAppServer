@@ -1,7 +1,7 @@
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
-fun main(){
+fun main() {
     val servidor = server()
 
     //servidor.db.addProduct("Cubrebocas", "QUETZ-3285TP", "./files/products/cubrebocas.png", 2300.0, 136)
@@ -9,12 +9,32 @@ fun main(){
     //servidor.db.removeProduct(1)
     //servidor.db.updateProduct(3, "Tamal de Mole", 15.5, 67)
 
-    servidor.db.saveCart(0, mapOf(3 to 10, 2 to 1, 0 to 1))
+    //servidor.db.saveCart(0, mapOf(3 to 10, 2 to 1, 0 to 1))
 
     val ans = servidor.db.getCart(0)
     val json = (GsonBuilder().setPrettyPrinting().create()).toJson(ans)
     println("Product List= $json")
 
-    servidor.dumpDatabase()
+    /*
+    Thread{
+        Runnable {
+            println("Starting Server")
+            servidor.start()
+        }
+    }*/
+
+
+    var line:String?
+    while(true){
+        line = readLine()!!
+        if(line == "exit"){
+            servidor.closeConnection = true
+            servidor.dumpDatabase()
+            println("Cerrando Servidor.\nExportando base de datos.")
+        }else{
+            println("Comando no reconocido: $line")
+        }
+    }
 
 }
+

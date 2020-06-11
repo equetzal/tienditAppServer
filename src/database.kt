@@ -21,10 +21,10 @@ class database {
     }
 
     //@author github.com/equetzal -> Enya
-    fun addProduct(name:String, sku:String, imgPath:String, price:Double, amount:Int){
+    fun addProduct(name:String, sku:String, imgPath:String, price:Double, amount:Int) : Int{
         val newProduct = producto(idProductoMax, name, sku, imgPath, price, amount)
         productos.put(idProductoMax, newProduct)
-        idProductoMax++
+        return idProductoMax++
     }
 
     //@author github.com/equetzal -> Enya
@@ -58,7 +58,7 @@ class database {
     }
 
     //@author github.com/equetzal -> Enya
-    fun newPurchase(idClient:Int, products:Map<Int,Int>) : Boolean{
+    fun newPurchase(idClient:Int, products:Map<Int,Int>) : Int{
         var purchaseDetails = ArrayList<producto_comprado>()
         products.forEach{
             println("Key= ${it.key}")
@@ -66,23 +66,22 @@ class database {
                 val newPurchasedProduct = producto_comprado(it.key, it.value, productos[it.key]!!.precio)
                 purchaseDetails.add(newPurchasedProduct)
             }else
-                return false
+                return -1
         }
         purchaseDetails.forEach {
             productos[it.idProducto]!!.cantidadDisponible -= it.cantidadProducto
         }
 
-        try {
+        return try {
             val newPurchase = compra(idCompraMax, idClient, purchaseDetails)
-            compras.put(idCompraMax, newPurchase)
+            compras[idCompraMax] = newPurchase
             clientes[idClient]!!.compras.add(idCompraMax)
             idCompraMax++
         }catch (e:Exception){
             e.printStackTrace()
-            return false
+            -1
         }
 
-        return true
     }
 
     //@author github.com/equetzal -> Enya
@@ -94,6 +93,29 @@ class database {
             false
     }
 
+    fun addToCart(idClient: Int, productId: Int, amount: Int) : Boolean{
+        return if(clientes.containsKey(idClient) && productos.containsKey(productId)){
+            if(clientes[idClient]!!.carrito.containsKey(productId))
+                clientes[idClient]!!.carrito[productId]!!.plus(amount)
+            else
+                clientes[idClient]!!.carrito.put(productId, amount)
+            true
+        }else
+            false
+    }
+
+    fun removeFromCart(idClient: Int, productId: Int, amount: Int) : Boolean{
+        return if(clientes.containsKey(idClient) && productos.containsKey(productId)){
+            if(clientes[idClient]!!.carrito.containsKey(productId)){
+                clientes[idClient]!!.carrito[productId]!!.minus(amount)
+                true
+            }
+            false
+        }else
+            false
+    }
+
+    //@author github.com/equetzal -> Enya
     fun getCart(idClient: Int): Map<Int, Int> {
         var ans = mapOf<Int,Int>()
         if(clientes.containsKey(idClient))
