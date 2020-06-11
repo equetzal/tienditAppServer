@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.apache.pdfbox:debugger-app:2.0.19" type="repository">
+    <properties maven-id="org.apache.pdfbox:debugger-app:2.0.19" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/pdfbox/debugger-app/2.0.19/debugger-app-2.0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

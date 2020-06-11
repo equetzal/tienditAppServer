@@ -1,3 +1,6 @@
+import com.itextpdf.text.*
+import com.itextpdf.text.pdf.PdfWriter
+import java.io.FileOutputStream
 
 class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_comprado>){
     var idCompra = idCompra
@@ -15,7 +18,31 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
     }
 
     fun generarPdf() : String{
-        return ""
+        val path = "./files/receipts/"
+        val file = "$path$idCompra.pdf"
+        val document = Document()
+        PdfWriter.getInstance(document, FileOutputStream(file))
+
+        document.open()
+        val font: Font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK)
+        var chunk: Chunk = Chunk(""+ idCompra, font)
+        document.add(chunk)
+        chunk = Chunk(""+ idCliente, font)
+        document.add(chunk)
+
+        productoComprados.forEach{
+            chunk = Chunk("ID producto: "+ it.idProducto, font)
+            document.add(chunk)
+            chunk = Chunk("Cantidad: "+ it.cantidadProducto, font)
+            document.add(chunk)
+            chunk = Chunk("Precio unitario"+ it.precioUnitario, font)
+            document.add(chunk)
+            chunk = Chunk("Subtotal: "+ it.precioFinalProductos, font)
+            document.add(chunk)
+        }
+
+        document.close()
+        return file
     }
 
 }
