@@ -1,0 +1,61 @@
+{
+  "idClienteMax": 2,
+  "idProductoMax": 2,
+  "idCompraMax": 1,
+  "compras": {
+    "0": {
+      "idCompra": 0,
+      "idCliente": 0,
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "cantidadProducto": 2,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 500.0
+        },
+        {
+          "idProducto": 1,
+          "cantidadProducto": 5,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 11500.0
+        }
+      ],
+      "urlPdf": "",
+      "total": 12000.0
+    }
+  },
+  "productos": {
+    "0": {
+      "idProducto": 0,
+      "nombre": "Gusto Quetzalliano",
+      "sku": "QUETZ-3571FG",
+      "imgPath": "./files/products/gusto_quetzalliano.png",
+      "precio": 250.0,
+      "cantidadDisponible": 8
+    },
+    "1": {
+      "idProducto": 1,
+      "nombre": "Cubrebocas",
+      "sku": "QUETZ-3285TP",
+      "imgPath": "./files/products/cubrebocas.png",
+      "precio": 2300.0,
+      "cantidadDisponible": 131
+    }
+  },
+  "clientes": {
+    "0": {
+      "idCliente": 0,
+      "nombre": "Enya Quetzalli Gýmez Rodrýguez",
+      "compras": [
+        0
+      ],
+      "carrito": {}
+    },
+    "1": {
+      "idCliente": 1,
+      "nombre": "Carlos Contreras",
+      "compras": [],
+      "carrito": {}
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import java.io.DataInputStream
 import java.io.DataOutputStream
 import java.io.File
@@ -6,6 +7,11 @@ import java.io.FileOutputStream
 import java.net.ServerSocket
 
 class server {
+    var db = database()
+
+    init{
+        db = loadDatabase()
+    }
 
     fun start(){
         try{
@@ -65,6 +71,21 @@ class server {
         println("Mensaje recibido: ${gustoQuetzalliano?.mensaje}")
     }
 
+    fun loadDatabase():database{
+        val path = "./db.json"
+        val jsonDB = File(path).readText(Charsets.UTF_8)
 
+        return Gson().fromJson(jsonDB, database::class.java)
+    }
+
+    fun dumpDatabase(){
+        val path = "./db.json"
+        val output = DataOutputStream(FileOutputStream(path))
+        val gson = GsonBuilder().setPrettyPrinting().create()
+        val jsonDB = gson.toJson(db)
+
+        output.writeBytes(jsonDB)
+        output.close()
+    }
 
 }
