@@ -24,8 +24,8 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
         PdfWriter.getInstance(document, FileOutputStream(file))
 
         document.open()
-        val font: Font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK)
-        var chunk: Chunk = Chunk(""+ idCompra, font)
+        val font: Font = FontFactory.getFont(FontFactory.COURIER, 16f, BaseColor.BLACK)
+        var chunk = Chunk(""+ idCompra, font)
         document.add(chunk)
         chunk = Chunk(""+ idCliente, font)
         document.add(chunk)
