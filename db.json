@@ -29,7 +29,7 @@
       "idProducto": 0,
       "nombre": "Gusto Quetzalliano",
       "sku": "QUETZ-3571FG",
-      "imgPath": "./files/products/gusto_quetzalliano.png",
+      "imgPath": "./files/products/0.jpg",
       "precio": 250.0,
       "cantidadDisponible": 8
     },
@@ -37,7 +37,7 @@
       "idProducto": 2,
       "nombre": "Cubrebocas",
       "sku": "QUETZ-3285TP",
-      "imgPath": "./files/products/cubrebocas.png",
+      "imgPath": "./files/products/2.jpg",
       "precio": 2300.0,
       "cantidadDisponible": 136
     },
@@ -45,7 +45,7 @@
       "idProducto": 3,
       "nombre": "Tamal de Mole",
       "sku": "QUETZ-3234TP",
-      "imgPath": "./files/products/cubrebocas.png",
+      "imgPath": "./files/products/3.jpg",
       "precio": 15.5,
       "cantidadDisponible": 67
     }
@@ -53,7 +53,7 @@
   "clientes": {
     "0": {
       "idCliente": 0,
-      "nombre": "Enya Quetzalli Gýmez Rodrýguez",
+      "nombre": "Enya Quetzalli Gomez Rodriguez",
       "compras": [
         0
       ],

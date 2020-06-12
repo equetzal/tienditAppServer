@@ -2,9 +2,11 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.*
 import java.net.ServerSocket
+import java.net.SocketException
 
 class server {
     var db = database()
+    val serverSocket = ServerSocket(12345)
     var closeConnection = false
 
     init{
@@ -13,7 +15,6 @@ class server {
 
     fun start(){
         try{
-            val serverSocket = ServerSocket(12345)
             println("Esperando Clientes...")
             println("Escuchando peticiones desde ${serverSocket.localSocketAddress}")
 
@@ -178,27 +179,14 @@ class server {
                 dataInputStream.close()
                 socket.close()
             }
-        }catch (e:Exception){
+        }catch (e:SocketException){
+          print("El servidor se ha cerrado")
+        } catch (e:Exception){
             e.printStackTrace()
             println("Chin! Ocurrió un error quetzalliano!")
         }
         if(closeConnection)
             return
-    }
-
-    private fun deserializarGustoQuetzalliano(file:String){
-        val jsonString = File(file).readText(Charsets.UTF_8)
-        println("Json File:")
-        println(jsonString)
-        var gustoQuetzalliano = Gson().fromJson(jsonString, GustoQuetzalliano::class.java)
-
-        println("Mi gusto Quetzalliano ha llegado!!, Esto es lo que contiene:")
-        println("Nombre del Gusto: ${gustoQuetzalliano?.nombreDelGusto}")
-        println("Tipo de Gusto: ${gustoQuetzalliano?.tipoDeGusto}")
-        println("Nivel de Felicidad: ${gustoQuetzalliano?.nivelDeFelicidad}")
-        println("Nivel de Musicalidad: ${gustoQuetzalliano?.nivelDeMusicalidad}")
-        println("Es un gusto de Kaskade?: ${gustoQuetzalliano?.esKaskade}")
-        println("Mensaje recibido: ${gustoQuetzalliano?.mensaje}")
     }
 
     //@author github.com/equetzal -> Enya
