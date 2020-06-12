@@ -15,19 +15,22 @@ fun main() {
     val json = (GsonBuilder().setPrettyPrinting().create()).toJson(ans)
     println("Product List= $json")
 
-    /*
-    Thread{
-        Runnable {
+
+    var serverThread = Thread{
+        run {
             println("Starting Server")
             servidor.start()
         }
-    }*/
 
+    }
+
+    serverThread.start()
 
     var line:String?
     while(true){
         line = readLine()!!
         if(line == "exit"){
+            servidor.serverSocket.close()
             servidor.closeConnection = true
             servidor.dumpDatabase()
             println("Cerrando Servidor.\nExportando base de datos.")
