@@ -31,7 +31,6 @@ fun main() {
         line = readLine()!!
         if(line == "exit"){
             servidor.serverSocket.close()
-            servidor.closeConnection = true
             servidor.dumpDatabase()
             println("Cerrando Servidor.\nExportando base de datos.")
         }else{

@@ -1,7 +1,7 @@
 {
   "idClienteMax": 2,
   "idProductoMax": 4,
-  "idCompraMax": 1,
+  "idCompraMax": 2,
   "compras": {
     "0": {
       "idCompra": 0,
@@ -22,6 +22,26 @@
       ],
       "urlPdf": "",
       "total": 12000.0
+    },
+    "1": {
+      "idCompra": 1,
+      "idCliente": 0,
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "cantidadProducto": 3,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 750.0
+        },
+        {
+          "idProducto": 2,
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        }
+      ],
+      "urlPdf": "./files/receipts/1.pdf",
+      "total": 3050.0
     }
   },
   "productos": {
@@ -31,7 +51,7 @@
       "sku": "QUETZ-3571FG",
       "imgPath": "./files/products/0.jpg",
       "precio": 250.0,
-      "cantidadDisponible": 8
+      "cantidadDisponible": 5
     },
     "2": {
       "idProducto": 2,
@@ -39,7 +59,7 @@
       "sku": "QUETZ-3285TP",
       "imgPath": "./files/products/2.jpg",
       "precio": 2300.0,
-      "cantidadDisponible": 136
+      "cantidadDisponible": 135
     },
     "3": {
       "idProducto": 3,
@@ -55,7 +75,8 @@
       "idCliente": 0,
       "nombre": "Enya Quetzalli Gomez Rodriguez",
       "compras": [
-        0
+        0,
+        1
       ],
       "carrito": {
         "3": 10,
