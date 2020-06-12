@@ -47,6 +47,8 @@ class server {
 
                         2 -> { //Loggear Client
                             response.isLoginOk = db.isClient(request.clientId)
+                            if(response.isLoginOk!!)
+                                response.clientName = db.clientes[request.clientId]!!.nombre
                         }
 
                         3 -> { //Mandar lista de Productos
