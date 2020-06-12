@@ -1,4 +1,5 @@
 class jsonResponse {
+    var pingOk:Boolean? = null
     var clientId:Int? = null
     var isLoginOk:Boolean? = null
     var productList:ArrayList<producto>? = null

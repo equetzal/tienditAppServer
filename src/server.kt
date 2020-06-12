@@ -35,6 +35,10 @@ class server {
                 // del 12 al 49 por si mandan mas Json
                 if(request.operationId in (0..49)){
                     when(request.operationId){
+                        0 -> { //Ping para comprobar comunicacion
+                            response.pingOk = true
+                        }
+
                         1 -> { //Agregar Cliente
                             response.clientId = db.addClient(request.clientName)
                         }
