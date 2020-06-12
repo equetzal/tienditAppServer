@@ -29,8 +29,10 @@ class server {
                 val dataOutputStream = DataOutputStream(socket.getOutputStream())
                 val bytes = ByteArray(1024)
 
-                val request = Gson().fromJson(dataInputStream.readUTF(), jsonRequest::class.java)
+                var json = dataInputStream.readUTF()
+                val request = Gson().fromJson(json, jsonRequest::class.java)
                 val response = jsonResponse()
+                println("Request -> $json")
 
                 // del 12 al 49 por si mandan mas Json
                 if(request.operationId in (0..49)){
@@ -101,7 +103,9 @@ class server {
                             response.cartList = db.getCart(request.clientId)
                         }
                     }
-                    dataOutputStream.writeUTF(Gson().toJson(response))
+                    json = Gson().toJson(response)
+                    dataOutputStream.writeUTF(json)
+                    println("Response -> $json")
                 }
 
                 // del 50 al 99 para envío de archivos
@@ -119,7 +123,9 @@ class server {
                             }catch (e:java.lang.Exception){
                                 response.isProductImageAvailable = false
                             }
-                            dataOutputStream.writeUTF(Gson().toJson(response))
+                            json = Gson().toJson(response)
+                            dataOutputStream.writeUTF(json)
+                            println("Response -> $json")
 
                             if(inputFile != null && file != null){
                                 dataOutputStream.writeUTF(file.name)
@@ -154,7 +160,9 @@ class server {
                             }catch (e:java.lang.Exception){
                                 response.isPurchasePDFAvailable = false
                             }
-                            dataOutputStream.writeUTF(Gson().toJson(response))
+                            json = Gson().toJson(response)
+                            dataOutputStream.writeUTF(json)
+                            println("Response -> $json")
 
                             if(inputFile != null && file != null){
                                 dataOutputStream.writeUTF(file.name)
@@ -179,6 +187,7 @@ class server {
                     }
                 }
 
+                println("Se ha cerrado la coneción de ${socket.inetAddress}:${socket.port}")
                 dataOutputStream.close()
                 dataInputStream.close()
                 socket.close()
