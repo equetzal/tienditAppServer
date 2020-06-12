@@ -10,7 +10,12 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
     var productoComprados = productosComprados
     var urlPdf = ""
     var total = 0.0
-
+    private val catFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 18f,
+            Font.BOLD)
+    private val subFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 16f,
+            Font.BOLD)
+    private val smallBold: Font = Font(Font.FontFamily.TIMES_ROMAN, 12f,
+            Font.BOLD)
     //@author github.com/equetzal -> Enya
     init{
         productosComprados.forEach {
@@ -24,12 +29,7 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
             paragraph.add(Paragraph(" "))
         }
     }
-    private val catFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 18f,
-            Font.BOLD)
-    private val subFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 16f,
-            Font.BOLD)
-    private val smallBold: Font = Font(Font.FontFamily.TIMES_ROMAN, 12f,
-            Font.BOLD)
+
     @Throws(DocumentException::class)
     private fun addTitlePage(document: Document) {
         val preface = Paragraph()
@@ -57,7 +57,7 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
         productoComprados.forEach{
             paragraph.add(Paragraph("ID producto: "+ it.idProducto, smallBold))
             paragraph.add(Paragraph("Cantidad: "+ it.cantidadProducto, smallBold))
-            paragraph.add(Paragraph("Precio unitario"+ it.precioUnitario, smallBold))
+            paragraph.add(Paragraph("Precio unitario: "+ it.precioUnitario, smallBold))
             paragraph.add(Paragraph("Subtotal: "+ it.precioFinalProductos, smallBold))
         }
         paragraph.add(Paragraph("Total: $total", smallBold))
