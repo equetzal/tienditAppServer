@@ -33,6 +33,14 @@
       "precio": 250.0,
       "cantidadDisponible": 8
     },
+    "1": {
+      "idProducto": 1,
+      "nombre": "Papitas",
+      "sku": "QUETZ-3287TP",
+      "imgPath": "./files/products/papitas.png",
+      "precio": 15.0,
+      "cantidadDisponible": 136
+    },
     "2": {
       "idProducto": 2,
       "nombre": "Cubrebocas",
