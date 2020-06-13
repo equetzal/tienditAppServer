@@ -30,6 +30,7 @@ class server {
                 val response = jsonResponse()
                 println("Request -> $json")
 
+
                 // del 12 al 49 por si mandan mas Json
                 if(request.operationId in (0..49)){
                     when(request.operationId){
@@ -107,7 +108,7 @@ class server {
                 }
 
                 // del 50 al 99 para envío de archivos
-                if(request.operationId in (0..49)){
+                if(request.operationId in (50..99)){
                     when(request.operationId){
                         50 -> { //Obtener Imagen de Producto
                             response.isProductImageAvailable = true
