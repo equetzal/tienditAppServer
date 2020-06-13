@@ -35,6 +35,7 @@ fun main() {
             servidor.dumpDatabase()
             serverThread.stop()
             println("Cerrando Servidor.\nExportando base de datos.")
+            break
         }else{
             println("Comando no reconocido: $line")
         }
