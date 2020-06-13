@@ -16,6 +16,7 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
             Font.BOLD)
     private val smallBold: Font = Font(Font.FontFamily.TIMES_ROMAN, 12f,
             Font.BOLD)
+
     //@author github.com/equetzal -> Enya
     init{
         productosComprados.forEach {
@@ -46,6 +47,8 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
         document.add(preface)
     }
     fun generarPdf() : String{
+        println("Generando PDF de compra")
+
         val path = "./files/receipts/"
         val file = "$path$idCompra.pdf"
         val document = Document()

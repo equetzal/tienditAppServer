@@ -185,18 +185,19 @@ class server {
                     }
                 }
 
-                println("Se ha cerrado la coneción de ${socket.inetAddress}:${socket.port}")
+                println("Se ha cerrado la conexión de ${socket.inetAddress}:${socket.port}")
                 dataOutputStream.close()
                 dataInputStream.close()
                 socket.close()
             }
         }catch (e:SocketException){
-          print("El servidor se ha cerrado")
+          println("El servidor se ha cerrado")
         } catch (e:Exception){
             e.printStackTrace()
             println("Chin! Ocurrió un error quetzalliano!")
             start()
         }
+        return
     }
 
     //@author github.com/equetzal -> Enya
