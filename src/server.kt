@@ -7,7 +7,6 @@ import java.net.SocketException
 class server {
     var db = database()
     val serverSocket = ServerSocket(12345)
-    var closeConnection = false
 
     init{
         db = loadDatabase()
@@ -19,9 +18,6 @@ class server {
             println("Escuchando peticiones desde ${serverSocket.localSocketAddress}")
 
             while(true){
-                if(closeConnection)
-                    break
-
                 val socket = serverSocket.accept()
                 println("Se ha establecido una conexión desde ${socket.inetAddress}:${socket.port}")
 
@@ -189,19 +185,19 @@ class server {
                     }
                 }
 
-                println("Se ha cerrado la coneción de ${socket.inetAddress}:${socket.port}")
+                println("Se ha cerrado la conexión de ${socket.inetAddress}:${socket.port}")
                 dataOutputStream.close()
                 dataInputStream.close()
                 socket.close()
             }
         }catch (e:SocketException){
-          print("El servidor se ha cerrado")
+          println("El servidor se ha cerrado")
         } catch (e:Exception){
             e.printStackTrace()
             println("Chin! Ocurrió un error quetzalliano!")
+            start()
         }
-        if(closeConnection)
-            return
+        return
     }
 
     //@author github.com/equetzal -> Enya

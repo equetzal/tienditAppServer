@@ -4,8 +4,8 @@ import com.google.gson.GsonBuilder
 fun main() {
     val servidor = server()
 
-    servidor.db.addProduct("Cubrebocas", "QUETZ-3285TP", "./files/products/cubrebocas.png", 2300.0, 136)
-    servidor.db.newPurchase(0, mapOf(0 to 5, 1 to 5))
+    //servidor.db.addProduct("Cubrebocas", "QUETZ-3285TP", "./files/products/cubrebocas.png", 2300.0, 136)
+    servidor.db.newPurchase(0, mapOf(0 to 2, 2 to 2))
     //servidor.db.removeProduct(1)
     //servidor.db.updateProduct(3, "Tamal de Mole", 15.5, 67)
 
@@ -20,8 +20,9 @@ fun main() {
         run {
             println("Starting Server")
             servidor.start()
+            return@run
         }
-
+        return@Thread
     }
 
     serverThread.start()
@@ -31,8 +32,8 @@ fun main() {
         line = readLine()!!
         if(line == "exit"){
             servidor.serverSocket.close()
-            servidor.closeConnection = true
             servidor.dumpDatabase()
+            serverThread.stop()
             println("Cerrando Servidor.\nExportando base de datos.")
         }else{
             println("Comando no reconocido: $line")

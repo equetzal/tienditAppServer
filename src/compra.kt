@@ -1,6 +1,4 @@
 import com.itextpdf.text.*
-import com.itextpdf.text.pdf.PdfPCell
-import com.itextpdf.text.pdf.PdfPTable
 import com.itextpdf.text.pdf.PdfWriter
 import java.io.FileOutputStream
 import java.util.*
@@ -15,10 +13,11 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
     private val catFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 18f,
             Font.BOLD)
     private val subFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 16f,
-            Font.NORMAL)
+            Font.BOLD)
     private val smallBold: Font = Font(Font.FontFamily.TIMES_ROMAN, 12f,
             Font.BOLD)
     private  val normFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 14f, Font.NORMAL)
+
     //@author github.com/equetzal -> Enya
     init{
         productosComprados.forEach {
@@ -48,34 +47,6 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
         addEmptyLine(preface, 2)
         document.add(preface)
     }
-
-    @Throws(BadElementException::class)
-    private fun createTable(document: Document,producto: producto_comprado) {
-        val table = PdfPTable(2)
-
-        // t.setBorderColor(BaseColor.GRAY);
-        // t.setPadding(4);
-        // t.setSpacing(4);
-        // t.setBorderWidth(1);
-        var c1 = PdfPCell(Phrase("Detalles"))
-        c1.horizontalAlignment = Element.ALIGN_CENTER
-        table.addCell(c1)
-        c1 = PdfPCell(Phrase(""))
-        c1.horizontalAlignment = Element.ALIGN_CENTER
-        table.addCell(c1)
-        table.headerRows = 1
-        table.addCell("ID producto")
-        table.addCell(producto.idProducto.toString())
-        table.addCell("Cantidad")
-        table.addCell(producto.cantidadProducto.toString())
-        table.addCell("Precio unitario")
-        table.addCell(producto.precioUnitario.toString())
-        table.addCell("Subtotal")
-        table.addCell(producto.precioFinalProductos.toString())
-        table.addCell("2.3")
-        document.add(table)
-    }
-
     fun generarPdf() : String{
         val path = "./files/receipts/"
         val file = "$path$idCompra.pdf"
@@ -85,10 +56,11 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
         document.open()
         addTitlePage(document)
         var paragraph = Paragraph()
-        addEmptyLine(paragraph,2)
         productoComprados.forEach{
-            createTable(document,it)
-            document.add(paragraph)
+            paragraph.add(Paragraph("ID producto: "+ it.idProducto, smallBold))
+            paragraph.add(Paragraph("Cantidad: "+ it.cantidadProducto, smallBold))
+            paragraph.add(Paragraph("Precio unitario: "+ it.precioUnitario, smallBold))
+            paragraph.add(Paragraph("Subtotal: "+ it.precioFinalProductos, smallBold))
         }
         paragraph.add(Paragraph("Total: $total", smallBold))
         document.add(paragraph)

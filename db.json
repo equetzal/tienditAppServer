@@ -1,10 +1,70 @@
 {
-  "idClienteMax": 2,
+  "idClienteMax": 4,
   "idProductoMax": 4,
-  "idCompraMax": 1,
+  "idCompraMax": 4,
   "compras": {
     "0": {
       "idCompra": 0,
+      "idCliente": 0,
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "cantidadProducto": 20,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 500.0
+        },
+        {
+          "idProducto": 1,
+          "cantidadProducto": 50,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 11500.0
+        }
+      ],
+      "urlPdf": "",
+      "total": 12000.0
+    },
+    "1": {
+      "idCompra": 1,
+      "idCliente": 0,
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "cantidadProducto": 3,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 750.0
+        },
+        {
+          "idProducto": 2,
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        }
+      ],
+      "urlPdf": "./files/receipts/1.pdf",
+      "total": 3050.0
+    },
+    "2": {
+      "idCompra": 2,
+      "idCliente": 0,
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "cantidadProducto": 3,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 750.0
+        },
+        {
+          "idProducto": 2,
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        }
+      ],
+      "urlPdf": "./files/receipts/2.pdf",
+      "total": 3050.0
+    },
+    "3": {
+      "idCompra": 3,
       "idCliente": 0,
       "productoComprados": [
         {
@@ -14,14 +74,29 @@
           "precioFinalProductos": 500.0
         },
         {
-          "idProducto": 1,
-          "cantidadProducto": 5,
+          "idProducto": 2,
+          "cantidadProducto": 2,
           "precioUnitario": 2300.0,
-          "precioFinalProductos": 11500.0
+          "precioFinalProductos": 4600.0
         }
       ],
-      "urlPdf": "",
-      "total": 12000.0
+      "urlPdf": "./files/receipts/3.pdf",
+      "total": 5100.0,
+      "catFont": {
+        "family": "TIMES_ROMAN",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "TIMES_ROMAN",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "TIMES_ROMAN",
+        "size": 12.0,
+        "style": 1
+      }
     }
   },
   "productos": {
@@ -31,15 +106,7 @@
       "sku": "QUETZ-3571FG",
       "imgPath": "./files/products/0.jpg",
       "precio": 250.0,
-      "cantidadDisponible": 8
-    },
-    "1": {
-      "idProducto": 1,
-      "nombre": "Papitas",
-      "sku": "QUETZ-3287TP",
-      "imgPath": "./files/products/papitas.png",
-      "precio": 15.0,
-      "cantidadDisponible": 136
+      "cantidadDisponible": 198
     },
     "2": {
       "idProducto": 2,
@@ -47,7 +114,7 @@
       "sku": "QUETZ-3285TP",
       "imgPath": "./files/products/2.jpg",
       "precio": 2300.0,
-      "cantidadDisponible": 136
+      "cantidadDisponible": 132
     },
     "3": {
       "idProducto": 3,
@@ -63,7 +130,10 @@
       "idCliente": 0,
       "nombre": "Enya Quetzalli Gomez Rodriguez",
       "compras": [
-        0
+        0,
+        1,
+        2,
+        3
       ],
       "carrito": {
         "3": 10,
@@ -74,6 +144,18 @@
     "1": {
       "idCliente": 1,
       "nombre": "Carlos Contreras",
+      "compras": [],
+      "carrito": {}
+    },
+    "2": {
+      "idCliente": 2,
+      "nombre": "Isaac Mosqueda",
+      "compras": [],
+      "carrito": {}
+    },
+    "3": {
+      "idCliente": 3,
+      "nombre": "Sandra Ivette",
       "compras": [],
       "carrito": {}
     }
