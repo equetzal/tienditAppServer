@@ -16,6 +16,8 @@ class compra(idCompra:Int, idCliente:Int, productosComprados:ArrayList<producto_
             Font.BOLD)
     private val smallBold: Font = Font(Font.FontFamily.TIMES_ROMAN, 12f,
             Font.BOLD)
+    private  val normFont: Font = Font(Font.FontFamily.TIMES_ROMAN, 14f, Font.NORMAL)
+
     //@author github.com/equetzal -> Enya
     init{
         productosComprados.forEach {
