@@ -63,7 +63,7 @@ class database {
         products.forEach{
             println("Key= ${it.key}")
             if(products.containsKey(it.key) && productos[it.key]!!.cantidadDisponible >= it.value){
-                val newPurchasedProduct = producto_comprado(it.key, it.value, productos[it.key]!!.precio)
+                val newPurchasedProduct = producto_comprado(it.key, it.value, productos[it.key]!!.precio, productos[it.key]!!.sku)
                 purchaseDetails.add(newPurchasedProduct)
             }else
                 return -1
@@ -73,7 +73,7 @@ class database {
         }
 
         return try {
-            val newPurchase = compra(idCompraMax, idClient, purchaseDetails)
+            val newPurchase = compra(idCompraMax, idClient, clientes[idClient]!!.nombre, purchaseDetails)
             compras[idCompraMax] = newPurchase
             clientes[idClient]!!.compras.add(idCompraMax)
             idCompraMax++

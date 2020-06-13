@@ -1,5 +1,6 @@
-class producto_comprado(idProducto:Int, cantidadProducto:Int, precioUnitario:Double) {
+class producto_comprado(idProducto:Int, cantidadProducto:Int, precioUnitario:Double, SKUproducto:String) {
     var idProducto = idProducto
+    var SKUproducto = SKUproducto
     var cantidadProducto = cantidadProducto
     var precioUnitario = precioUnitario
     var precioFinalProductos = 0.0
