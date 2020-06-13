@@ -42,7 +42,7 @@ class compra(idCompra:Int, idCliente:Int, NombreCliente:String, productosComprad
         val simpleDateFormat = SimpleDateFormat(pattern)
 
         val date = simpleDateFormat.format(Date())
-        val filename = "./res/tienditApp_logo.png"
+        val filename = "./res/tienditApp_logo.jpg"
         val image = Image.getInstance(filename)
         document.add(image)
         val preface = Paragraph()
@@ -101,10 +101,13 @@ class compra(idCompra:Int, idCliente:Int, NombreCliente:String, productosComprad
             c1.horizontalAlignment = Element.ALIGN_CENTER
             table.addCell(c1)
         }
-        var c2 = PdfPCell(Phrase("Total"))
-        c2.colspan = 4
-        table.addCell(c2)
-        table.addCell(total.toString())
+        c1 = PdfPCell(Phrase("Total"))
+        c1.horizontalAlignment = Element.ALIGN_RIGHT
+        c1.colspan = 4
+        table.addCell(c1)
+        c1 = PdfPCell(Phrase(total.toString()))
+        c1.horizontalAlignment = Element.ALIGN_CENTER
+        table.addCell(c1)
         table.widthPercentage = 100f
         document.add(table)
     }
