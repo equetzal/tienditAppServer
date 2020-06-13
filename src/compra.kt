@@ -42,7 +42,7 @@ class compra(idCompra:Int, idCliente:Int, NombreCliente:String, productosComprad
         val simpleDateFormat = SimpleDateFormat(pattern)
 
         val date = simpleDateFormat.format(Date())
-        val filename = "./res/tienditApp_logo.jpg"
+        val filename = "./res/tienditApp_logo_small.jpg"
         val image = Image.getInstance(filename)
         document.add(image)
         val preface = Paragraph()
