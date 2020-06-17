@@ -95,10 +95,10 @@ class database {
 
     fun addToCart(idClient: Int, productId: Int, amount: Int) : Boolean{
         return if(clientes.containsKey(idClient) && productos.containsKey(productId)){
-            if(clientes[idClient]!!.carrito.containsKey(productId))
-                clientes[idClient]!!.carrito[productId]!!.plus(amount)
-            else
-                clientes[idClient]!!.carrito.put(productId, amount)
+            var actAmount: Int = if (clientes[idClient]!!.carrito[productId] == null) 0 else clientes[idClient]!!.carrito[productId]!!
+            actAmount++
+            clientes[idClient]!!.carrito[productId] = actAmount
+            clientes[idClient]!!.total += productos[productId]!!.precio
             true
         }else
             false
@@ -106,11 +106,13 @@ class database {
 
     fun removeFromCart(idClient: Int, productId: Int, amount: Int) : Boolean{
         return if(clientes.containsKey(idClient) && productos.containsKey(productId)){
-            if(clientes[idClient]!!.carrito.containsKey(productId)){
-                clientes[idClient]!!.carrito[productId]!!.minus(amount)
-                true
-            }
-            false
+            var actAmount: Int = if (clientes[idClient]!!.carrito[productId] == null) 0 else clientes[idClient]!!.carrito[productId]!!
+            actAmount--
+            clientes[idClient]!!.carrito[productId] = actAmount
+            clientes[idClient]!!.total -= productos[productId]!!.precio
+            if(actAmount == 0)
+                clientes[idClient]!!.carrito.remove(productId)
+            true
         }else
             false
     }

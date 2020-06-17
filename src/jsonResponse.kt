@@ -10,6 +10,7 @@ class jsonResponse {
     var purchaseId:Int? = null
     var isCartUpdateSuccessful:Boolean? = null
     var cartList:Map<Int,Int>? = null
+    var total:Double? = null
     var isProductImageAvailable:Boolean? = null
     var isPurchasePDFAvailable:Boolean? = null
 }

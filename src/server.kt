@@ -42,10 +42,11 @@ class server {
                             response.clientId = db.addClient(request.clientName)
                         }
 
-                        2 -> { //Loggear Client
+                        2 -> { //Loggear Cliente
                             response.isLoginOk = db.isClient(request.clientId)
-                            if(response.isLoginOk!!)
+                            if(response.isLoginOk!!){
                                 response.clientName = db.clientes[request.clientId]!!.nombre
+                            }
                         }
 
                         3 -> { //Mandar lista de Productos
@@ -88,10 +89,16 @@ class server {
 
                         8 -> { //Añadir al Carrito
                             response.isCartUpdateSuccessful = db.addToCart(request.clientId, request.productId, request.productAmount)
+                            val cart = Gson().toJson(db.clientes[request.clientId]!!.carrito)
+                            response.total = db.clientes[request.clientId]!!.total
+                            println("Cart -> $cart")
                         }
 
                         9 -> { //Quitar del Carrito
                             response.isCartUpdateSuccessful = db.removeFromCart(request.clientId, request.productId, request.productAmount)
+                            val cart = Gson().toJson(db.clientes[request.clientId]!!.carrito)
+                            response.total = db.clientes[request.clientId]!!.total
+                            println("Cart -> $cart")
                         }
 
                         10 -> { //Reemplazar Carrito
@@ -100,6 +107,7 @@ class server {
 
                         11 -> { //Obtener Carrito
                             response.cartList = db.getCart(request.clientId)
+                            response.total = db.clientes[request.clientId]!!.total
                         }
                     }
                     json = Gson().toJson(response)
