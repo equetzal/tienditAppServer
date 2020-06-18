@@ -1,7 +1,7 @@
 {
-  "idClienteMax": 4,
-  "idProductoMax": 4,
-  "idCompraMax": 16,
+  "idClienteMax": 6,
+  "idProductoMax": 6,
+  "idCompraMax": 35,
   "compras": {
     "0": {
       "idCompra": 0,
@@ -592,6 +592,816 @@
         "size": 14.0,
         "style": 0
       }
+    },
+    "16": {
+      "idCompra": 16,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/16.pdf",
+      "total": 10250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "17": {
+      "idCompra": 17,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/17.pdf",
+      "total": 10250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "18": {
+      "idCompra": 18,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/18.pdf",
+      "total": 10250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "19": {
+      "idCompra": 19,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/19.pdf",
+      "total": 10250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "20": {
+      "idCompra": 20,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/20.pdf",
+      "total": 10250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "21": {
+      "idCompra": 21,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        },
+        {
+          "idProducto": 2,
+          "SKUproducto": "QUETZ-3285TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        },
+        {
+          "idProducto": 3,
+          "SKUproducto": "QUETZ-3234TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 15.5,
+          "precioFinalProductos": 15.5
+        }
+      ],
+      "urlPdf": "./files/receipts/21.pdf",
+      "total": 12315.5,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "22": {
+      "idCompra": 22,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        },
+        {
+          "idProducto": 2,
+          "SKUproducto": "QUETZ-3285TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        },
+        {
+          "idProducto": 3,
+          "SKUproducto": "QUETZ-3234TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 15.5,
+          "precioFinalProductos": 15.5
+        }
+      ],
+      "urlPdf": "./files/receipts/22.pdf",
+      "total": 12315.5,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "23": {
+      "idCompra": 23,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        },
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 2,
+          "SKUproducto": "QUETZ-3285TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        }
+      ],
+      "urlPdf": "./files/receipts/23.pdf",
+      "total": 12550.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "24": {
+      "idCompra": 24,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        },
+        {
+          "idProducto": 2,
+          "SKUproducto": "QUETZ-3285TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        }
+      ],
+      "urlPdf": "./files/receipts/24.pdf",
+      "total": 12550.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "25": {
+      "idCompra": 25,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 2,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 500.0
+        },
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        },
+        {
+          "idProducto": 2,
+          "SKUproducto": "QUETZ-3285TP",
+          "cantidadProducto": 1,
+          "precioUnitario": 2300.0,
+          "precioFinalProductos": 2300.0
+        }
+      ],
+      "urlPdf": "./files/receipts/25.pdf",
+      "total": 12800.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "26": {
+      "idCompra": 26,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        },
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 2,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 500.0
+        }
+      ],
+      "urlPdf": "./files/receipts/26.pdf",
+      "total": 10500.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "27": {
+      "idCompra": 27,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/27.pdf",
+      "total": 10000.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "28": {
+      "idCompra": 28,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/28.pdf",
+      "total": 10000.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "29": {
+      "idCompra": 29,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/29.pdf",
+      "total": 10000.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "30": {
+      "idCompra": 30,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/30.pdf",
+      "total": 10000.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "31": {
+      "idCompra": 31,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 1,
+          "SKUproducto": "QUETZ-3441DD",
+          "cantidadProducto": 1,
+          "precioUnitario": 10000.0,
+          "precioFinalProductos": 10000.0
+        }
+      ],
+      "urlPdf": "./files/receipts/31.pdf",
+      "total": 10000.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "32": {
+      "idCompra": 32,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        }
+      ],
+      "urlPdf": "./files/receipts/32.pdf",
+      "total": 250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "33": {
+      "idCompra": 33,
+      "idCliente": 0,
+      "NombreCliente": "Enya Quetzalli Gomez Rodriguez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        }
+      ],
+      "urlPdf": "./files/receipts/33.pdf",
+      "total": 250.0,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
+    },
+    "34": {
+      "idCompra": 34,
+      "idCliente": 5,
+      "NombreCliente": "Oscar Perez",
+      "productoComprados": [
+        {
+          "idProducto": 0,
+          "SKUproducto": "QUETZ-3571FG",
+          "cantidadProducto": 1,
+          "precioUnitario": 250.0,
+          "precioFinalProductos": 250.0
+        },
+        {
+          "idProducto": 2,
+          "SKUproducto": "QUETZ-3285TP",
+          "cantidadProducto": 2,
+          "precioUnitario": 200.0,
+          "precioFinalProductos": 400.0
+        },
+        {
+          "idProducto": 5,
+          "SKUproducto": "QUETZALOVE",
+          "cantidadProducto": 1,
+          "precioUnitario": 662.23,
+          "precioFinalProductos": 662.23
+        }
+      ],
+      "urlPdf": "./files/receipts/34.pdf",
+      "total": 1312.23,
+      "catFont": {
+        "family": "HELVETICA",
+        "size": 18.0,
+        "style": 1
+      },
+      "subFont": {
+        "family": "HELVETICA",
+        "size": 16.0,
+        "style": 1
+      },
+      "smallBold": {
+        "family": "HELVETICA",
+        "size": 12.0,
+        "style": 1
+      },
+      "normFont": {
+        "family": "HELVETICA",
+        "size": 14.0,
+        "style": 0
+      }
     }
   },
   "productos": {
@@ -601,31 +1411,31 @@
       "sku": "QUETZ-3571FG",
       "imgPath": "./files/products/0.jpg",
       "precio": 250.0,
-      "cantidadDisponible": 179
+      "cantidadDisponible": 165
     },
     "1": {
       "idProducto": 1,
-      "nombre": "Lysol",
+      "nombre": "Lysol Azul ",
       "sku": "QUETZ-3441DD",
       "imgPath": "./files/products/1.jpg",
       "precio": 10000.0,
-      "cantidadDisponible": 95
+      "cantidadDisponible": 79
     },
     "2": {
       "idProducto": 2,
-      "nombre": "Cubrebocas",
+      "nombre": "Cubre bocas de Farmacia ",
       "sku": "QUETZ-3285TP",
       "imgPath": "./files/products/2.jpg",
-      "precio": 2300.0,
-      "cantidadDisponible": 118
+      "precio": 200.0,
+      "cantidadDisponible": 111
     },
-    "3": {
-      "idProducto": 3,
-      "nombre": "Tamal de Mole",
-      "sku": "QUETZ-3234TP",
-      "imgPath": "./files/products/3.jpg",
-      "precio": 15.5,
-      "cantidadDisponible": 67
+    "5": {
+      "idProducto": 5,
+      "nombre": "Yo Merengues ",
+      "sku": "QUETZALOVE",
+      "imgPath": "./files/products/0..jpg",
+      "precio": 662.23,
+      "cantidadDisponible": 83832
     }
   },
   "clientes": {
@@ -648,29 +1458,65 @@
         12,
         13,
         14,
-        15
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
       ],
-      "carrito": {
-      }
+      "carrito": {},
+      "total": 0.0
     },
     "1": {
       "idCliente": 1,
       "nombre": "Carlos Contreras",
       "compras": [],
-      "carrito": {}
+      "carrito": {},
+      "total": 0.0
     },
     "2": {
       "idCliente": 2,
       "nombre": "Isaac Mosqueda",
       "compras": [],
-      "carrito": {
-      }
+      "carrito": {},
+      "total": 0.0
     },
     "3": {
       "idCliente": 3,
       "nombre": "Sandra Ivette",
       "compras": [],
-      "carrito": {}
+      "carrito": {},
+      "total": 0.0
+    },
+    "4": {
+      "idCliente": 4,
+      "nombre": "Juanito Perez",
+      "compras": [],
+      "carrito": {},
+      "total": 0.0
+    },
+    "5": {
+      "idCliente": 5,
+      "nombre": "Oscar Perez",
+      "compras": [
+        34
+      ],
+      "carrito": {},
+      "total": 0.0
     }
   }
 }

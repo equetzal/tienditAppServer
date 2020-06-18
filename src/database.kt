@@ -31,6 +31,11 @@ class database {
     fun removeProduct(idProduct:Int) : Boolean{
         return if(productos.containsKey(idProduct)){
             productos.remove(idProduct)
+            clientes.forEach{
+                it.value.carrito?.remove(idProduct)
+            }
+
+
             true
         }else{
             false
@@ -76,6 +81,8 @@ class database {
             val newPurchase = compra(idCompraMax, idClient, clientes[idClient]!!.nombre, purchaseDetails)
             compras[idCompraMax] = newPurchase
             clientes[idClient]!!.compras.add(idCompraMax)
+            clientes[idClient]!!.carrito.clear()
+            clientes[idClient]!!.total = 0.0
             idCompraMax++
         }catch (e:Exception){
             e.printStackTrace()

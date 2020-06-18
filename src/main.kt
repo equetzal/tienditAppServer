@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder
 fun main() {
     val servidor = server()
 
-    servidor.db.newPurchase(0, mapOf(0 to 1, 1 to 1))
+    //servidor.db.newPurchase(0, mapOf(0 to 1, 1 to 1))
 
     var serverThread = Thread{
         run {
